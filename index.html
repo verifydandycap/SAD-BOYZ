@@ -32,6 +32,17 @@
             filter: brightness(0.4);
         }
 
+        /* LOGO DANDY EN LA ESQUINA SUPERIOR DERECHA */
+        .corner-logo {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            width: 60px;
+            height: auto;
+            z-index: 100;
+            pointer-events: none;
+        }
+
         /* Título superior (titulo.png) */
         .title-top {
             position: relative;
@@ -128,6 +139,8 @@
 <body>
     <div class="background"></div>
     
+    <img src="dandy.png" alt="Dandy Logo" class="corner-logo">
+
     <img src="titulo.png" alt="Dandy Hats" class="title-top">
 
     <div class="hat-container">
