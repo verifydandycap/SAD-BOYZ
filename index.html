@@ -9,17 +9,17 @@
             margin: 0;
             padding: 0;
             width: 100vw;
-            min-height: 100vh; 
+            height: 100vh;
             background-color: #000;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow-x: hidden;
-            overflow-y: auto;
+            overflow: hidden; /* Sin scroll */
             justify-content: space-between;
         }
 
+        /* Imagen de Fondo (fondo.png) */
         .background {
             position: fixed;
             top: 0;
@@ -32,6 +32,7 @@
             filter: brightness(0.4);
         }
 
+        /* Título superior (titulo.png) */
         .title-top {
             position: relative;
             z-index: 5;
@@ -41,6 +42,7 @@
             filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
         }
 
+        /* Contenedor de la gorra (gorra.jpeg) */
         .hat-container {
             position: absolute;
             top: 50%;
@@ -59,6 +61,7 @@
             filter: drop-shadow(0 20px 40px rgba(0,0,0,0.8));
         }
 
+        /* Panel inferior */
         .bottom-panel {
             position: relative;
             z-index: 10;
@@ -82,6 +85,7 @@
             opacity: 0.9;
         }
 
+        /* Logo con brillo (logoo.png) */
         .gold-seal {
             width: 85px;
             height: auto;
@@ -107,6 +111,7 @@
             margin-bottom: 15px;
         }
 
+        /* Botón estilo captura */
         .btn-about {
             display: inline-block;
             background-color: #000000;
@@ -137,27 +142,16 @@
     </div>
 
     <script>
-        // Función para manejar el contador
         function updateCounter() {
-            // Obtenemos el valor actual de la memoria del navegador
             let count = localStorage.getItem('dandy_scans');
-            
             if (count === null) {
-                // Si es la primera vez, empezamos en 1
                 count = 1;
             } else {
-                // Si ya existía, le sumamos 1
                 count = parseInt(count) + 1;
             }
-            
-            // Guardamos el nuevo valor
             localStorage.setItem('dandy_scans', count);
-            
-            // Lo mostramos en pantalla
             document.getElementById('counter').innerText = count;
         }
-
-        // Ejecutar al cargar la página
         window.onload = updateCounter;
     </script>
 </body>
